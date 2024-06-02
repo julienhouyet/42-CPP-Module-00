@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 06:40:21 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 06:59:11 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 
 void PhoneBook::addContact(const Contact& contact) 
 {
-	contacts = contact;
+	contacts[contactCount] = contact;
+	contactCount++;
 }
 
 void PhoneBook::displayContacts() const 
 {
-	std::cout << "FirstName: " << contacts.getFirstName() << std::endl;
-	std::cout << "LastName: " << contacts.getLastName() << std::endl;
+	for (int i = 0; i < contactCount; i++)
+	{
+		std::cout << "FirstName: " << contacts[i].getFirstName() << std::endl;
+		std::cout << "LastName: " << contacts[i].getLastName() << std::endl;
+	}
 }
