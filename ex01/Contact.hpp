@@ -6,11 +6,14 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:47 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 05:58:05 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 06:33:17 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+
+# include <string>
 
 class Contact
 {
@@ -34,3 +37,5 @@ class Contact
 		std::string getPhoneNumber() const { return phoneNumber; }
 		std::string getDarkestSecret() const { return darkestSecret; }
 };
+
+#endif
