@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 10:27:46 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 10:39:10 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void PhoneBook::addContact()
 	
 	std::string input;
 
-	std::cout << "\n" << std::endl;
-
-	//std::cin.ignore();
+	std::cout << " " << std::endl;
 
 	do {
 		std::cout << "First Name : ";
@@ -56,7 +54,7 @@ void PhoneBook::addContact()
 	contact.setDarkestSecret(input);
 
 	insertContact(contact);
-    std::cout << "\033[32m\nContact added with success!\033[0m" << std::endl;
+    std::cout << "\033[32m\nContact added with success!\n\033[0m" << std::endl;
 }
 
 void PhoneBook::insertContact(const Contact& contact) 
