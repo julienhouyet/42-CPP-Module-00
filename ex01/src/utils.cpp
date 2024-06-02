@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/01 18:13:42 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 12:51:04 by jhouyet          ###   ########.fr       */
+/*   Created: 2024/06/02 07:35:38 by jhouyet           #+#    #+#             */
+/*   Updated: 2024/06/02 13:22:00 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "utils.hpp"
 
-# include "Contact.hpp"
-
-class PhoneBook 
+std::string formatField(const std::string str)
 {
-	private:
-		Contact contacts[8];
-		int contactCount;
-
-	public:
-		PhoneBook() : contactCount(0) {};
-		
-		void addContact();
-		void insertContact(const Contact& contact);
-		void displayContacts() const;
-		void displayContact(int i) const;
-		void searchContact() const;
-};
-
-#endif
+	if (str.length() > 10)
+	{
+		return str.substr(0, 9) + ".";
+	}
+	else
+	{
+		return str;
+	}
+}
