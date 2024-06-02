@@ -6,7 +6,7 @@
 #    By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/01 16:27:19 by jhouyet           #+#    #+#              #
-#    Updated: 2024/06/02 13:29:19 by jhouyet          ###   ########.fr        #
+#    Updated: 2024/06/02 14:13:42 by jhouyet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,9 +37,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CC) $(CPPFLAGS) $(INCS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) -r $(OBJ_DIR)
 
 fclean: clean
+	$(RM) -r $(OBJ_DIR)
 	$(RM) $(NAME)
 
 re: fclean all
