@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 09:34:35 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 10:13:03 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,46 @@
 
 void PhoneBook::addContact() 
 {
-	std::cout << "ADD CONTACT" << std::endl;
+	Contact contact;
+	
+	std::string input;
+
+	std::cout << "\n" << std::endl;
+
+	std::cin.ignore();
+
+	do {
+		std::cout << "First Name : ";
+		std::getline(std::cin, input);
+	} while (input.empty());
+	contact.setFirstName(input);
+
+	do {
+		std::cout << "Last Name : ";
+		std::getline(std::cin, input);
+	} while (input.empty());
+	contact.setLastName(input);
+
+	do {
+		std::cout << "Nick Name : ";
+		std::getline(std::cin, input);
+	} while (input.empty());
+	contact.setNickName(input);
+
+	do {
+		std::cout << "Phone Number : ";
+		std::getline(std::cin, input);
+	} while (input.empty());
+	contact.setPhoneNumber(input);
+
+	do {
+		std::cout << "Darkest Secret : ";
+		std::getline(std::cin, input);
+	} while (input.empty());
+	contact.setDarkestSecret(input);
+
+	insertContact(contact);
+    std::cout << "\033[32m\nContact added with success!\033[0m" << std::endl;
 }
 
 void PhoneBook::insertContact(const Contact& contact) 
@@ -39,8 +78,9 @@ void PhoneBook::searchContact() const
 }
 
 void PhoneBook::displayContacts() const 
-{
+{	
     std::cout 
+		<< "\n"
 		<< std::setw(10) << "Index" << "|" 
 		<< std::setw(10) << "FirstName" << "|" 
 		<< std::setw(10) << "LastName" << "|" 

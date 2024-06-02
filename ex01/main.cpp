@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:16:24 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 09:33:28 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 10:16:49 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,26 @@ int main()
 
 	std::string command;
 
-	std::cout 
-		<< " " << "\n"
-		<< "--- Please choose a command ---" << "\n"
-		<< " " << "\n"
-		<< "ADD : Add a contact" << "\n"
-		<< "SEARCH : Search a contact" << "\n"
-		<< "EXIT : Exit the PhoneBook" <<  "\n" 
-		<< " " << "\n"
-		<< "-------------------------------"
-		<< "\n" <<
-	std::endl;
-
 	while (true)
 	{
+		std::cout 
+			<< " " << "\n"
+			<< "\033[33m--- Please choose a command ---" << "\n"
+			<< " " << "\n"
+			<< "ADD : Add a contact" << "\n"
+			<< "SEARCH : Search a contact" << "\n"
+			<< "EXIT : Exit the PhoneBook" <<  "\n" 
+			<< " " << "\n"
+			<< "-------------------------------\033[0m"
+			<< "\n" <<
+		std::endl;
+	
 		std::cout << "Command : ";
 		std::cin >> command;
 
 		if (command == "ADD")
 		{
-			std::cout << "Adding...\n" << std::endl;
+			phonebook.addContact();
 		}
 		else if (command == "SEARCH")
 		{
