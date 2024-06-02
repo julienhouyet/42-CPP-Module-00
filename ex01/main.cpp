@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:16:24 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 07:28:13 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 08:42:33 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,42 @@ int main()
 {
 	PhoneBook phonebook;
 
-	Contact contact1;
-	
-	contact1.setFirstName("Julien");
-	contact1.setLastName("Houyet Dis Harois de Walsaur");
-	contact1.setNickName("Raks3010");
-	contact1.setPhoneNumber("0472652064");
-	contact1.setDarkestSecret("Je ne te fais pas confiance.");
+	std::string command;
 
-	Contact contact2;
-	
-	contact2.setFirstName("Malika");
-	contact2.setLastName("Wahmane");
-	contact2.setNickName("MalikaWah");
-	contact2.setPhoneNumber("0478458978");
-	contact2.setDarkestSecret("J'ai un mari en or !");
+	std::cout 
+		<< " " << "\n"
+		<< "--- Please choose a command ---" << "\n"
+		<< " " << "\n"
+		<< "ADD : Add a contact" << "\n"
+		<< "SEARCH : Search a contact" << "\n"
+		<< "EXIT : Exit the PhoneBook" <<  "\n" 
+		<< " " << "\n"
+		<< "-------------------------------"
+		<< "\n" <<
+	std::endl;
 
-	phonebook.addContact(contact1);
-	phonebook.addContact(contact2);
-	
-	phonebook.displayContacts();
+	while (true)
+	{
+		std::cout << "Command : ";
+		std::cin >> command;
 
-	return 0;
+		if (command == "ADD")
+		{
+			std::cout << "Adding...\n" << std::endl;
+		}
+		else if (command == "SEARCH")
+		{
+			std::cout << "Searching...\n" << std::endl;
+		}
+		else if (command == "EXIT")
+		{
+			break;
+		}
+		else
+		{
+			std::cout << "Unknow command\n" << std::endl;
+		}
+	}
+
+	return (0);
 }

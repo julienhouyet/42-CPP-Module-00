@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 07:58:47 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 08:24:07 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 #include <iostream>
 #include <iomanip>
 
-void PhoneBook::addContact(const Contact& contact) 
+void PhoneBook::addContact() 
+{
+	std::cout << "ADD CONTACT" << std::endl;
+}
+
+void PhoneBook::insertContact(const Contact& contact) 
 {	
 	if (contactCount < 8)
 	{
