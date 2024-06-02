@@ -6,7 +6,7 @@
 #    By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/01 16:27:19 by jhouyet           #+#    #+#              #
-#    Updated: 2024/06/01 16:39:20 by jhouyet          ###   ########.fr        #
+#    Updated: 2024/06/02 07:59:29 by jhouyet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 		= megaphone
 
 SRC 		= megaphone.cpp
 OBJ 		= $(SRC:.cpp=.o)
-CC 			= g++
+CC 			= c++
 RM 			= rm -f
 CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
 	

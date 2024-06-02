@@ -6,7 +6,7 @@
 #    By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/01 16:27:19 by jhouyet           #+#    #+#              #
-#    Updated: 2024/06/02 07:58:51 by jhouyet          ###   ########.fr        #
+#    Updated: 2024/06/02 07:59:33 by jhouyet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC 		= 	PhoneBook.cpp \
 				main.cpp
 				
 OBJ 		= $(SRC:.cpp=.o)
-CC 			= g++
+CC 			= c++
 RM 			= rm -f
 CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
 	
