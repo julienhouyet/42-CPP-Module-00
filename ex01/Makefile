@@ -6,7 +6,7 @@
 #    By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/01 16:27:19 by jhouyet           #+#    #+#              #
-#    Updated: 2024/06/02 07:57:44 by jhouyet          ###   ########.fr        #
+#    Updated: 2024/06/02 07:58:51 by jhouyet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME 		= phonebook
 
 SRC 		= 	PhoneBook.cpp \
 				Contact.cpp \
+				utils.cpp \
 				main.cpp
 				
 OBJ 		= $(SRC:.cpp=.o)

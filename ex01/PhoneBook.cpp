@@ -6,11 +6,12 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 07:57:59 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 07:58:47 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "utils.hpp"
 #include <iostream>
 #include <iomanip>
 
@@ -40,9 +41,9 @@ void PhoneBook::displayContacts() const
 	{
 		std::cout 
 			<< std::setw(10) << i + 1 << "|" 
-			<< std::setw(10) << contacts[i].getFirstName() << "|" 
-			<< std::setw(10) << contacts[i].getLastName() << "|" 
-			<< std::setw(10) << contacts[i].getNickName() << 
+			<< std::setw(10) << formatField(contacts[i].getFirstName()) << "|" 
+			<< std::setw(10) << formatField(contacts[i].getLastName()) << "|" 
+			<< std::setw(10) << formatField(contacts[i].getNickName()) << 
 		std::endl;
 	}
 }
