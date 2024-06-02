@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 12:27:32 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 13:02:43 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,42 @@ void PhoneBook::insertContact(const Contact& contact)
 
 void PhoneBook::searchContact() const
 {
-	displayContacts();
+	int index;
+	std::string input;
+
+	if (contactCount == 0)
+	{
+		std::cout << "\033[31m\nPhoneBook is empty.\n\033[0m" << std::endl;
+		return ;
+	}
+	else
+	{
+		displayContacts();
+	}
+	
+	do {
+		std::cout << "Search a contact with index : ";
+		std::getline(std::cin, input);
+		if (!input.empty())
+		{
+            try {
+                index = std::stoi(input);
+                if (index < 0 || index >= contactCount) {
+                    std::cout << "\033[31mContact not found.\033[0m" << std::endl;
+                } else {
+                    break;
+                }
+            } catch (const std::invalid_argument& e) {
+                std::cout << "\033[31m\nPlease enter a numeric index.\n\033[0m" << std::endl;
+            }
+		}	
+		else
+		{
+			std::cout << "\033[31m\nIndex cannot be empty.\n\033[0m" << std::endl;
+		}
+	} while (true);
+	
+	displayContact(index);
 }
 
 void PhoneBook::displayContacts() const 
@@ -105,7 +140,7 @@ void PhoneBook::displayContact(int i) const
 
 	contact = contacts[i];
     std::cout 
-		<< "Index : " << i << "\n" 
+		<< "\n"
 		<< "FirstName : " << contact.getLastName() << "\n" 
 		<< "LastName : " << contact.getLastName() << "\n" 
 		<< "Nickname : " << contact.getNickName() << "\n"
