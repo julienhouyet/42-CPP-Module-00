@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 14:30:20 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 15:06:40 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,20 +63,20 @@ void PhoneBook::addContact()
 	} while (input.empty());
 	contact.setDarkestSecret(input);
 
-	insertContact(contact);
+	this->insertContact(contact);
     std::cout << "\033[32m\nContact added with success!\n\033[0m" << std::endl;
 }
 
 void PhoneBook::insertContact(const Contact& contact) 
 {	
-	if (contactCount < 8)
+	if (this->contactCount < 8)
 	{
-		contacts[contactCount] = contact;
-		contactCount++;
+		this->contacts[this->contactCount] = contact;
+		this->contactCount++;
 	}
 	else
 	{
-		contacts[7] = contact;
+		this->contacts[7] = contact;
 	}
 }
 
@@ -85,14 +85,14 @@ void PhoneBook::searchContact() const
 	int index;
 	std::string input;
 
-	if (contactCount == 0)
+	if (this->contactCount == 0)
 	{
 		std::cout << "\033[31m\nPhoneBook is empty.\n\033[0m" << std::endl;
 		return ;
 	}
 	else
 	{
-		displayContacts();
+		this->displayContacts();
 	}
 	
 	do {
@@ -102,8 +102,8 @@ void PhoneBook::searchContact() const
 		{
             try {
                 index = std::stoi(input);
-                if (index < 0 || index >= contactCount) {
-                    std::cout << "\033[31mContact not found.\033[0m" << std::endl;
+                if (index < 0 || index >= this->contactCount) {
+                    std::cout << "\033[31m\nContact not found.\n\033[0m" << std::endl;
                 } else {
                     break;
                 }
@@ -117,7 +117,7 @@ void PhoneBook::searchContact() const
 		}
 	} while (true);
 	
-	displayContact(index);
+	this->displayContact(index);
 }
 
 void PhoneBook::displayContacts() const 
@@ -131,7 +131,7 @@ void PhoneBook::displayContacts() const
 		<< std::setw(10) << "Nickname" << 
 	std::endl;
 			  
-	for (int i = 0; i < contactCount; i++)
+	for (int i = 0; i < this->contactCount; i++)
 	{
 		std::cout 
 			<< std::setw(10) << i << "|" 
@@ -148,7 +148,7 @@ void PhoneBook::displayContact(int i) const
 {
 	Contact contact;
 
-	contact = contacts[i];
+	contact = this->contacts[i];
     std::cout 
 		<< "\n"
 		<< "FirstName : " << contact.getLastName() << "\n" 
