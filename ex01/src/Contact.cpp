@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:50 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 14:34:04 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 14:37:17 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,25 +44,25 @@ void Contact::setDarkestSecret(const std::string darkestSecret)
 
 const std::string Contact::getFirstName() const 
 { 
-	return firstName; 
+	return this->firstName;
 }
 
 const std::string Contact::getLastName() const 
 { 
-	return lastName;
+	return this->lastName;
 }
 
 const std::string Contact::getNickName() const 
 { 
-	return nickName;
+	return this->nickName;
 }
 
 const std::string Contact::getPhoneNumber() const 
 { 
-	return phoneNumber;
+	return this->phoneNumber;
 }
 
 const std::string Contact::getDarkestSecret() const 
 { 
-	return darkestSecret;
+	return this->darkestSecret;
 }
