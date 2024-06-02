@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:16:24 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 10:16:49 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 10:23:50 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main()
 		std::endl;
 	
 		std::cout << "Command : ";
-		std::cin >> command;
+		std::getline(std::cin, command);
 
 		if (command == "ADD")
 		{
