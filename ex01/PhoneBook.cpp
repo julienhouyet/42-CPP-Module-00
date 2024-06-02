@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 08:24:07 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 09:34:35 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ void PhoneBook::insertContact(const Contact& contact)
 	}
 }
 
+void PhoneBook::searchContact() const
+{
+	displayContacts();
+}
+
 void PhoneBook::displayContacts() const 
 {
     std::cout 
@@ -45,10 +50,25 @@ void PhoneBook::displayContacts() const
 	for (int i = 0; i < contactCount; i++)
 	{
 		std::cout 
-			<< std::setw(10) << i + 1 << "|" 
+			<< std::setw(10) << i << "|" 
 			<< std::setw(10) << formatField(contacts[i].getFirstName()) << "|" 
 			<< std::setw(10) << formatField(contacts[i].getLastName()) << "|" 
 			<< std::setw(10) << formatField(contacts[i].getNickName()) << 
 		std::endl;
 	}
+}
+
+void PhoneBook::displayContact(int i) const 
+{
+	Contact contact;
+
+	contact = contacts[i];
+    std::cout 
+		<< "Index : " << i << "\n" 
+		<< "FirstName : " << contact.getLastName() << "\n" 
+		<< "LastName : " << contact.getLastName() << "\n" 
+		<< "Nickname : " << contact.getNickName() << "\n"
+		<< "PhoneNumber : " << contact.getPhoneNumber() << "\n"
+		<< "DarkestSecret : " << contact.getDarkestSecret() << "\n" <<
+	std::endl;
 }

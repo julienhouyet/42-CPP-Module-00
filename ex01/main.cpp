@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:16:24 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 08:42:33 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 09:33:28 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main()
 		}
 		else if (command == "SEARCH")
 		{
-			std::cout << "Searching...\n" << std::endl;
+			phonebook.searchContact();
 		}
 		else if (command == "EXIT")
 		{
