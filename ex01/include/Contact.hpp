@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:47 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 07:22:53 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 13:59:38 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ class Contact
 		std::string darkestSecret;
 
 	public:
-		void setFirstName (std::string fName) { firstName = fName; }
-		void setLastName (std::string lName) { lastName = lName; }
-		void setNickName (std::string nName) { nickName = nName; }
-		void setPhoneNumber (std::string pNumber) { phoneNumber = pNumber; }
-		void setDarkestSecret (std::string dSecret) { darkestSecret = dSecret; }
+		void setFirstName(const std::string fName);
+		void setLastName(const std::string lName);
+		void setNickName(const std::string nName);
+		void setPhoneNumber(const std::string pNumber);
+		void setDarkestSecret(const std::string dSecret);
 
-		std::string getFirstName() const { return firstName; }
-		std::string getLastName() const { return lastName; }
-		std::string getNickName() const { return nickName; }
-		std::string getPhoneNumber() const { return phoneNumber; }
-		std::string getDarkestSecret() const { return darkestSecret; }
+		const std::string getFirstName() const;
+		const std::string getLastName() const;
+		const std::string getNickName() const;
+		const std::string getPhoneNumber() const;
+		const std::string getDarkestSecret() const;
 };
 
 #endif
