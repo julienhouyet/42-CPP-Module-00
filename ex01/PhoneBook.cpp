@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 10:13:03 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 10:20:03 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void PhoneBook::displayContacts() const
 {	
     std::cout 
 		<< "\n"
-		<< std::setw(10) << "Index" << "|" 
+		<< std::setw(10) << "\033[34mIndex" << "|" 
 		<< std::setw(10) << "FirstName" << "|" 
 		<< std::setw(10) << "LastName" << "|" 
 		<< std::setw(10) << "Nickname" << 
@@ -93,7 +93,7 @@ void PhoneBook::displayContacts() const
 			<< std::setw(10) << i << "|" 
 			<< std::setw(10) << formatField(contacts[i].getFirstName()) << "|" 
 			<< std::setw(10) << formatField(contacts[i].getLastName()) << "|" 
-			<< std::setw(10) << formatField(contacts[i].getNickName()) << 
+			<< std::setw(10) << formatField(contacts[i].getNickName()) << "\033[0m" <<
 		std::endl;
 	}
 }
