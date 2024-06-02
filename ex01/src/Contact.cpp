@@ -6,35 +6,40 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:50 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 13:59:57 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 14:34:04 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <iostream>
 
-void Contact::setFirstName(const std::string fName) 
+Contact::Contact() { }
+
+Contact::~Contact() { }
+
+void Contact::setFirstName(const std::string firstName) 
 { 
-	firstName = fName; 
+	this->firstName = firstName; 
 }
 
-void Contact::setLastName(const std::string lName)
+void Contact::setLastName(const std::string lastName)
 { 
-	lastName = lName; 
+	this->lastName = lastName; 
 }
 
-void Contact::setNickName(const std::string nName) 
+void Contact::setNickName(const std::string nickName) 
 { 
-	nickName = nName; 
+	this->nickName = nickName; 
 }
 
-void Contact::setPhoneNumber(const std::string pNumber) 
+void Contact::setPhoneNumber(const std::string phoneNumber) 
 { 
-	phoneNumber = pNumber; 
+	this->phoneNumber = phoneNumber; 
 }
 
-void Contact::setDarkestSecret(const std::string dSecret) 
+void Contact::setDarkestSecret(const std::string darkestSecret) 
 { 
-	darkestSecret = dSecret; 
+	this->darkestSecret = darkestSecret; 
 }
 
 const std::string Contact::getFirstName() const 

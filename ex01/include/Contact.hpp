@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:47 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 13:59:38 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 14:33:38 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ class Contact
 		std::string darkestSecret;
 
 	public:
-		void setFirstName(const std::string fName);
-		void setLastName(const std::string lName);
-		void setNickName(const std::string nName);
-		void setPhoneNumber(const std::string pNumber);
-		void setDarkestSecret(const std::string dSecret);
+		Contact();
+		~Contact();
+		
+		void setFirstName(const std::string firstName);
+		void setLastName(const std::string lastName);
+		void setNickName(const std::string nickName);
+		void setPhoneNumber(const std::string phoneNumber);
+		void setDarkestSecret(const std::string darkestSecret);
 
 		const std::string getFirstName() const;
 		const std::string getLastName() const;

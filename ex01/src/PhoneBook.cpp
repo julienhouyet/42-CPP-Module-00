@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 13:19:49 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 14:30:20 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 #include "utils.hpp"
 #include <iostream>
 #include <iomanip>
+
+PhoneBook::PhoneBook() : contactCount(0)
+{
+    std::cout << "PhoneBook created" << std::endl;
+}
+
+PhoneBook::~PhoneBook()
+{
+    std::cout << "PhoneBook destroyed" << std::endl;
+}
 
 void PhoneBook::addContact() 
 {

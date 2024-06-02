@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:42 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 13:22:09 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/02 14:29:56 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ class PhoneBook
 		int contactCount;
 
 	public:
-		PhoneBook() : contactCount(0) {};
+		PhoneBook();
+		~PhoneBook();
 		
 		void addContact();
 		void insertContact(const Contact& contact);
