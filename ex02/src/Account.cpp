@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:39:44 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/03 18:21:51 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/03 18:30:42 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,31 @@ void Account::makeDeposit(int deposit)
 
 bool Account::makeWithdrawal(int withdrawal)
 {
-	withdrawal = 1;
-	withdrawal = withdrawal + 1;
-    return 1;
+	// [19920104_091532] index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
+	this->_displayTimestamp();
+	this->_totalAmount -= withdrawal;
+	this->_nbWithdrawals++;
+	this->_totalNbDeposits++;
+    std::cout 
+		<< "index:" << this->_accountIndex 
+		<< ";p_amount:" << this->_amount;
+	if (withdrawal > this->_amount)
+	{
+		std::cout 
+			<< ";withdrawal:refused"
+			<< std::endl;
+	}
+	else
+	{
+		std::cout 
+			<< ";withdrawal:" << withdrawal
+			<< ";amount:" << this->_amount - withdrawal
+			<< ";nb_withdrawals:" << this->_nbWithdrawals
+			<< std::endl;
+	}
+	if (withdrawal < this->_amount)
+		this->_amount -= withdrawal;
+	return true;
 }
 
 int Account::checkAmount(void) const
