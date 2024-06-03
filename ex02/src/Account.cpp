@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:39:44 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/03 18:37:19 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/03 18:44:24 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	Account::getNbWithdrawals( void )
 
 void Account::displayAccountsInfos( void )
 {		
-	// [19920104_091532] accounts:8;total:12442;deposits:8;withdrawals:6
+	_displayTimestamp();
     std::cout 
 		<< "accounts:" << _nbAccounts 
 		<< ";total:" << _totalAmount 
@@ -86,7 +86,6 @@ void Account::displayAccountsInfos( void )
 
 void Account::makeDeposit(int deposit)
 {
-	// [19920104_091532] index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
 	this->_displayTimestamp();
 	this->_totalAmount += deposit;
 	this->_nbDeposits++;
@@ -104,10 +103,7 @@ void Account::makeDeposit(int deposit)
 
 bool Account::makeWithdrawal(int withdrawal)
 {
-	// [19920104_091532] index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
 	this->_displayTimestamp();
-	this->_nbWithdrawals++;
-	this->_totalNbWithdrawals++;
     std::cout 
 		<< "index:" << this->_accountIndex 
 		<< ";p_amount:" << this->_amount;
@@ -116,18 +112,20 @@ bool Account::makeWithdrawal(int withdrawal)
 		std::cout 
 			<< ";withdrawal:refused"
 			<< std::endl;
+		return false;
 	}
 	else
 	{
+		this->_nbWithdrawals++;
+		this->_totalNbWithdrawals++;
 		std::cout 
 			<< ";withdrawal:" << withdrawal
 			<< ";amount:" << this->_amount - withdrawal
 			<< ";nb_withdrawals:" << this->_nbWithdrawals
 			<< std::endl;
-	}
-	if (withdrawal < this->_amount)
 		this->_totalAmount -= withdrawal;
 		this->_amount -= withdrawal;
+	}
 	return true;
 }
 
@@ -139,9 +137,12 @@ int Account::checkAmount(void) const
 
 void Account::displayStatus(void) const
 {
-	// [19920104_091532] index:0;amount:47;deposits:1;withdrawals:0std::cout 
-		std::cout 
-			<< "TEST"
-			<< std::endl;
+	this->_displayTimestamp();
+    std::cout 
+		<< "index:" << _accountIndex 
+		<< ";amount:" << _amount 
+		<< ";deposits:" << _nbDeposits 
+		<< ";withdrawals:" << _nbWithdrawals
+	<< std::endl;
 	return ;
 }
