@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:39:44 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/03 18:13:22 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/03 18:21:51 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Account::Account(int initial_deposit) : _accountIndex(_nbAccounts), _amount(init
 {
 	this->_accountIndex = this->_nbAccounts;
 	this->_nbAccounts++;
+	this->_totalAmount += this->_amount;
 	this->_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";amout:" << this->_amount << ";created" << std::endl;
 }
@@ -84,10 +85,10 @@ void Account::makeDeposit(int deposit)
 	this->_nbDeposits++;
 	this->_totalNbDeposits++;
     std::cout 
-		<< "index:" << _accountIndex 
-		<< ";p_amount:" << _amount 
+		<< "index:" << this->_accountIndex 
+		<< ";p_amount:" << this->_amount 
 		<< ";deposit:" << deposit 
-		<< ";amount:" << this->_amount + deposit 
+		<< ";amount:" << this->_amount + deposit
 		<< ";nb_deposits:" << this->_nbDeposits 
 	<< std::endl;
 	this->_amount += deposit;
