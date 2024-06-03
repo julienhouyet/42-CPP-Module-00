@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:39:44 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/03 17:35:30 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/03 18:13:22 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void Account::_displayTimestamp(void)
 		<< std::setw(2) << std::setfill('0') << ltm->tm_hour
 		<< std::setw(2) << std::setfill('0') << ltm->tm_min
 		<< std::setw(2) << std::setfill('0') << ltm->tm_sec
-		<< "]";
+		<< "] ";
 }
 
 int	Account::getNbAccounts( void )
@@ -78,8 +78,19 @@ void Account::displayAccountsInfos( void )
 
 void Account::makeDeposit(int deposit)
 {
-	deposit = 1;
-	deposit = deposit + 1;
+	// [19920104_091532] index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
+	this->_displayTimestamp();
+	this->_totalAmount += deposit;
+	this->_nbDeposits++;
+	this->_totalNbDeposits++;
+    std::cout 
+		<< "index:" << _accountIndex 
+		<< ";p_amount:" << _amount 
+		<< ";deposit:" << deposit 
+		<< ";amount:" << this->_amount + deposit 
+		<< ";nb_deposits:" << this->_nbDeposits 
+	<< std::endl;
+	this->_amount += deposit;
 	return ;
 }
 
