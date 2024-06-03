@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:39:44 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/03 16:49:42 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/03 16:51:42 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit) : _accountIndex(_nbAccounts), _amount(0), _nbDeposits(0), _nbWithdrawals(0)
 {
+	_accountIndex = _nbAccounts;
 	_nbAccounts++;
 	_totalAmount += initial_deposit;
-	std::cout << "index:" << _nbAccounts << ";amout:" << _totalAmount << ";created\n";
+	std::cout << "index:" << _accountIndex << ";amout:" << _totalAmount << ";created\n";
 	// [20240603_150850] index:0;amount:42;created
 }
 
