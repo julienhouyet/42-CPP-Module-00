@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:39:44 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/03 17:12:47 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/03 17:35:30 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,19 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-Account::Account(int initial_deposit) : _accountIndex(_nbAccounts), _amount(0), _nbDeposits(0), _nbWithdrawals(0)
+Account::Account(int initial_deposit) : _accountIndex(_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0)
 {
 	this->_accountIndex = this->_nbAccounts;
 	this->_nbAccounts++;
-	this->_totalAmount += initial_deposit;
 	this->_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";amout:" << this->_totalAmount << ";created\n";
-	// [20240603_150850] index:0;amount:42;created
+	std::cout << "index:" << this->_accountIndex << ";amout:" << this->_amount << ";created" << std::endl;
 }
 
-Account::~Account()
+Account::~Account(void)
 {
+	this->_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";amout:" << this->_amount << ";closed" << std::endl;
+	this->_nbAccounts--;
 }
 
 void Account::_displayTimestamp(void)
@@ -39,7 +40,8 @@ void Account::_displayTimestamp(void)
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
 	std::cout 
-		<< "[" << 1900 + ltm->tm_year
+		<< "[" 
+		<< 1900 + ltm->tm_year
 		<< std::setw(2) << std::setfill('0') << ltm->tm_mon
 		<< std::setw(2) << std::setfill('0') << ltm->tm_mday
 		<< "_"
