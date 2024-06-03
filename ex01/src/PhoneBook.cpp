@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 15:06:40 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/03 15:32:24 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <iomanip>
 
-PhoneBook::PhoneBook() : contactCount(0)
+PhoneBook::PhoneBook() : _contactCount(0)
 {
     std::cout << "PhoneBook created" << std::endl;
 }
@@ -69,14 +69,14 @@ void PhoneBook::addContact()
 
 void PhoneBook::insertContact(const Contact& contact) 
 {	
-	if (this->contactCount < 8)
+	if (this->_contactCount < 8)
 	{
-		this->contacts[this->contactCount] = contact;
-		this->contactCount++;
+		this->_contacts[this->_contactCount] = contact;
+		this->_contactCount++;
 	}
 	else
 	{
-		this->contacts[7] = contact;
+		this->_contacts[7] = contact;
 	}
 }
 
@@ -85,7 +85,7 @@ void PhoneBook::searchContact() const
 	int index;
 	std::string input;
 
-	if (this->contactCount == 0)
+	if (this->_contactCount == 0)
 	{
 		std::cout << "\033[31m\nPhoneBook is empty.\n\033[0m" << std::endl;
 		return ;
@@ -102,7 +102,7 @@ void PhoneBook::searchContact() const
 		{
             try {
                 index = std::stoi(input);
-                if (index < 0 || index >= this->contactCount) {
+                if (index < 0 || index >= this->_contactCount) {
                     std::cout << "\033[31m\nContact not found.\n\033[0m" << std::endl;
                 } else {
                     break;
@@ -131,13 +131,13 @@ void PhoneBook::displayContacts() const
 		<< std::setw(10) << "Nickname" << 
 	std::endl;
 			  
-	for (int i = 0; i < this->contactCount; i++)
+	for (int i = 0; i < this->_contactCount; i++)
 	{
 		std::cout 
 			<< std::setw(10) << i << "|" 
-			<< std::setw(10) << formatField(contacts[i].getFirstName()) << "|" 
-			<< std::setw(10) << formatField(contacts[i].getLastName()) << "|" 
-			<< std::setw(10) << formatField(contacts[i].getNickName()) <<
+			<< std::setw(10) << formatField(_contacts[i].getFirstName()) << "|" 
+			<< std::setw(10) << formatField(_contacts[i].getLastName()) << "|" 
+			<< std::setw(10) << formatField(_contacts[i].getNickName()) <<
 		std::endl;
 	}
 
@@ -148,7 +148,7 @@ void PhoneBook::displayContact(int i) const
 {
 	Contact contact;
 
-	contact = this->contacts[i];
+	contact = this->_contacts[i];
     std::cout 
 		<< "\n"
 		<< "FirstName : " << contact.getLastName() << "\n" 

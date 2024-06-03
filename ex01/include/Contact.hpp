@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:47 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 14:33:38 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/03 15:23:35 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,6 @@
 
 class Contact
 {
-	private:
-		std::string firstName;
-		std::string lastName;
-		std::string nickName;
-		std::string phoneNumber;
-		std::string darkestSecret;
-
 	public:
 		Contact();
 		~Contact();
@@ -39,6 +32,13 @@ class Contact
 		const std::string getNickName() const;
 		const std::string getPhoneNumber() const;
 		const std::string getDarkestSecret() const;
+		
+	private:
+		std::string _firstName;
+		std::string _lastName;
+		std::string _nickName;
+		std::string _phoneNumber;
+		std::string _darkestSecret;
 };
 
 #endif
