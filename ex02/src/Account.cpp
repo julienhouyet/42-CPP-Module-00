@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:39:44 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/03 18:30:42 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/03 18:37:19 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,14 @@ int	Account::getNbWithdrawals( void )
 }
 
 void Account::displayAccountsInfos( void )
-{
+{		
+	// [19920104_091532] accounts:8;total:12442;deposits:8;withdrawals:6
+    std::cout 
+		<< "accounts:" << _nbAccounts 
+		<< ";total:" << _totalAmount 
+		<< ";deposits:" << _totalNbDeposits 
+		<< ";withdrawals:" << _totalNbWithdrawals
+	<< std::endl;
 	return ;
 }
 
@@ -99,9 +106,8 @@ bool Account::makeWithdrawal(int withdrawal)
 {
 	// [19920104_091532] index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
 	this->_displayTimestamp();
-	this->_totalAmount -= withdrawal;
 	this->_nbWithdrawals++;
-	this->_totalNbDeposits++;
+	this->_totalNbWithdrawals++;
     std::cout 
 		<< "index:" << this->_accountIndex 
 		<< ";p_amount:" << this->_amount;
@@ -120,6 +126,7 @@ bool Account::makeWithdrawal(int withdrawal)
 			<< std::endl;
 	}
 	if (withdrawal < this->_amount)
+		this->_totalAmount -= withdrawal;
 		this->_amount -= withdrawal;
 	return true;
 }
@@ -132,5 +139,9 @@ int Account::checkAmount(void) const
 
 void Account::displayStatus(void) const
 {
+	// [19920104_091532] index:0;amount:47;deposits:1;withdrawals:0std::cout 
+		std::cout 
+			<< "TEST"
+			<< std::endl;
 	return ;
 }
