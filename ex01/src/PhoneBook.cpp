@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/04 15:09:46 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/04 15:24:30 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <iomanip>
 
-PhoneBook::PhoneBook() : _contactCount(0)
+PhoneBook::PhoneBook() : _contactCount(0), _contactIndex(0)
 {
 	std::cout << "PhoneBook created" << std::endl;
 }
@@ -77,16 +77,13 @@ void PhoneBook::addContact()
 }
 
 void PhoneBook::insertContact(const Contact &contact)
-{
+{	
+	if (this->_contactIndex == 8)
+		this->_contactIndex = 0;
+	this->_contacts[this->_contactIndex] = contact;
+	this->_contactIndex++;
 	if (this->_contactCount < 8)
-	{
-		this->_contacts[this->_contactCount] = contact;
 		this->_contactCount++;
-	}
-	else
-	{
-		this->_contacts[7] = contact;
-	}
 }
 
 void PhoneBook::searchContact() const

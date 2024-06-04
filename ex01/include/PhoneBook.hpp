@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:42 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/04 14:59:15 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/04 15:12:15 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class PhoneBook
 	private:
 		Contact _contacts[8];
 		int _contactCount;
+		int _contactIndex;
 };
 
 #endif
