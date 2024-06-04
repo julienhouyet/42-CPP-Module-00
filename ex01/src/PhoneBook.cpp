@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:45 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/04 15:24:30 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/04 19:20:53 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,11 @@ void PhoneBook::searchContact() const
 	do
 	{
 		std::cout << "Search a contact with index : ";
-		std::getline(std::cin, input);
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << " " << std::endl;
+            exit(0);
+        }
 		if (!input.empty())
 		{
 			try
