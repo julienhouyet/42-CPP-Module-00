@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:16:24 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/06/02 13:24:11 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/06/04 15:10:18 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,30 @@ int main()
 	{
 	
 		std::cout << "Command : ";
-		std::getline(std::cin, command);
-
-		if (command == "ADD")
+		
+		if (std::getline(std::cin, command).fail() == 1)
 		{
-			phonebook.addContact();
-		}
-		else if (command == "SEARCH")
-		{
-			phonebook.searchContact();
-		}
-		else if (command == "EXIT")
-		{
+			std::cout << " " << std::endl;
 			break;
 		}
 		else
 		{
-			std::cout << "\nUnknow command\n" << std::endl;
+			if (command == "ADD")
+			{
+				phonebook.addContact();
+			}
+			else if (command == "SEARCH")
+			{
+				phonebook.searchContact();
+			}
+			else if (command == "EXIT")
+			{
+				break;
+			}
+			else
+			{
+				std::cout << "\nUnknow command\n" << std::endl;
+			}
 		}
 	}
 
